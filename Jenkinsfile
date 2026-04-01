@@ -35,7 +35,7 @@ pipeline {
         stage('Pull Docker Image') {
             steps {
                 // Validate that the image exists in DockerHub
-                sh "docker pull ${DOCKER_IMAGE}"
+                sh "sudo docker pull ${DOCKER_IMAGE}"
             }
         }
 
