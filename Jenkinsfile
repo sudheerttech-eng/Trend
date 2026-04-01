@@ -54,8 +54,8 @@ pipeline {
             steps {
                 // Apply Kubernetes manifests
                 sh """
-                sh "kubectl --kubeconfig=$KUBECONFIG apply -f deployment.yaml"
-                sh "kubectl --kubeconfig=$KUBECONFIG apply -f service.yaml"
+                kubectl apply -f deployment.yaml
+                kubectl apply -f service.yaml
                 """
             }
         }
