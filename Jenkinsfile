@@ -41,10 +41,12 @@ pipeline {
 
         stage('Configure kubectl for EKS') {
             steps {
-                // Update kubeconfig to point to your EKS cluster
-                sh """
-                aws eks --region ${AWS_REGION} update-kubeconfig --name ${CLUSTER_NAME}
-                """
+                withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', 
+                          credentialsId: 'aws-cred']]) {
+            sh """
+            aws eks --region ${AWS_REGION} update-kubeconfig --name ${CLUSTER_NAME}
+            """
+               }
             }
         }
 
