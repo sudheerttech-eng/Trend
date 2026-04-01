@@ -1,4 +1,31 @@
-node_modules
+# Ignore git
 .git
 .gitignore
+
+# Ignore Docker-related files
+Dockerfile
+.dockerignore
+
+# Ignore Terraform files (not needed in image)
+*.tf
+.terraform
+.terraform.lock.hcl
+
+# Ignore Jenkins pipeline
+Jenkinsfile
+
+# Ignore Kubernetes manifests
+deployment.yaml
+service.yaml
+
+# Ignore logs
+*.log
+
+# Ignore OS/editor files
+.DS_Store
+Thumbs.db
+.vscode
+.idea
+
+# Ignore README
 README.md
